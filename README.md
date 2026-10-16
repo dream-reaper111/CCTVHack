@@ -327,4 +327,137 @@ The following improvements are planned ideas, not implemented features:
 
 <img width="373" height="498" alt="be" src="https://github.com/user-attachments/assets/9cd567a4-cb27-4b64-81e4-f117258c2f03" />
 <img width="281" height="498" alt="hacked-get-hacked" src="https://github.com/user-attachments/assets/fe67df77-e74d-476d-b10c-016a43eae1f1" />
-#PS: maybe next time Mohammed don't encrypted your program in base64 faggot get touched skid hope you like the improvements I'll be making since i was able to "hack" an get your Source LULZSEC
+#PS: maybe next time Mohammed don't encrypted your program in base64 faggot get touched skid hope you like the improvements I'll be making since i was able to "hack" and get your Source LULZSEC!!!!
+________________________________________________________________________________________________________________________________
+
+## Planned OSINT and Exposure Assessment Expansion
+
+Future versions will add an OSINT workspace for researching assets you own or have permission to assess.
+
+These features are proposed and are not included in the current release. Provider availability, API permissions, quotas, and account requirements will be verified during implementation.
+
+### Planned Integrations
+
+| Integration | Purpose |
+| --- | --- |
+| Shodan | Retrieve recorded ports, service banners, organization information, and observation timestamps. |
+| Censys | Research recorded service exposure and TLS certificate information. |
+| RDAP | Retrieve domain-registration and IP-allocation information where available. |
+| DNS | Inspect A, AAAA, CNAME, MX, NS, and TXT records. |
+| Certificate Transparency | Research certificates and associated subdomains for approved domains. |
+| VirusTotal | Retrieve existing IP and domain reputation reports. |
+| AbuseIPDB | Review abuse reports associated with an IP address. |
+| IP Geolocation | Display approximate geographic and network information. |
+
+Geolocation does not establish a device’s exact location. Reputation reports and indexed service information may be incomplete, inaccurate, or outdated.
+
+### Planned OSINT Menu
+
+- Authorized IP or domain lookup.
+- Approved asset and network management.
+- DNS and registration research.
+- Recorded service and certificate review.
+- Existing reputation report lookup.
+- Saved report comparison.
+- Local search history.
+- CSV and JSON export.
+- API configuration and connection status.
+
+OSINT enrichment will operate on explicitly selected, approved assets. It will not automatically enrich every address collected from camera directories.
+
+### Unified Asset Reports
+
+Reports will bring observations together while retaining their individual sources.
+
+Planned report fields include:
+
+- Queried IP address or domain.
+- Source provider.
+- Lookup time and source observation time.
+- Organization and ASN, where available.
+- Recorded ports and service information.
+- DNS records.
+- Certificate details.
+- Reputation findings and supporting references.
+- Potential vulnerabilities requiring verification.
+- Missing data, errors, and uncertainty.
+
+A reported vulnerability is a lead for investigation, not confirmation that an asset is exploitable. A reputation score alone does not establish malicious activity.
+
+### API Key Management
+
+- Load credentials from environment variables.
+- Support an optional local configuration file.
+- Exclude secrets from Git and exported reports.
+- Redact credentials from logs and error messages.
+- Report missing credentials without crashing.
+- Allow each integration to be enabled independently.
+
+Never commit API keys to a public repository. If a key is exposed, revoke or rotate it through the provider.
+
+### Reliability and Request Handling
+
+- Explicit request timeouts.
+- Provider-specific rate-limit handling.
+- Limited retries with backoff.
+- Local caching with visible cache timestamps.
+- Configurable request pacing.
+- Clear authentication and quota errors.
+- Partial reports when one provider is unavailable.
+- Deduplication and normalized result fields.
+
+### Passive Research by Default
+
+Provider integrations will retrieve existing observations where supported.
+
+Active scans, new file submissions, direct camera connections, authentication testing, and stream recording are outside the default OSINT workflow. Any future connectivity checks will require an explicitly configured authorized asset scope.
+
+### Development Roadmap
+
+#### Phase 1 — Core Reliability
+
+- Correct menu mappings and input validation.
+- Improve pagination and parsing.
+- Remove automatic dependency installation.
+- Add timeouts and specific error messages.
+- Deduplicate directory results.
+- Improve Back, Exit, and interrupt handling.
+
+#### Phase 2 — Results and Interface
+
+- CSV and JSON export.
+- Search history and saved reports.
+- Progress indicators and result summaries.
+- Compact and giant banner options.
+- Terminal-width-aware display.
+- Configuration file and no-color mode.
+
+#### Phase 3 — Initial OSINT Integrations
+
+- Approved asset list.
+- Shodan lookup.
+- RDAP lookup.
+- DNS inspection.
+- Provider timestamps and source attribution.
+- API credential handling and caching.
+
+#### Phase 4 — Additional Research Sources
+
+- Censys integration.
+- Certificate Transparency research.
+- Existing VirusTotal reputation reports.
+- AbuseIPDB report lookup.
+- Approximate IP geolocation.
+
+#### Phase 5 — Reporting and Change Tracking
+
+- Unified asset reports.
+- Compare previous observations.
+- Highlight added or removed recorded services.
+- Track certificate changes.
+- Export reports with provenance and uncertainty.
+- Add offline fixtures for parser and provider-response testing.
+
+### Responsible Interpretation
+
+Public indexing does not establish permission to access a device. Findings should be reviewed against asset ownership, authorization, observation age, and supporting evidence before action is taken.
